@@ -1,0 +1,81 @@
+
+//+------------------------------------------------------------------+
+//| Stock Index Hedge EA                                              |
+//| Developed by Forex Robot Easy Team - forexroboteasy.com           |
+//+------------------------------------------------------------------+
+
+//+------------------------------------------------------------------+
+//| Include necessary libraries and define variables                  |
+//+------------------------------------------------------------------+
+#include <Trade\Trade.mqh>
+
+input double Risk = 1.0; // Risk percentage per trade
+input double StopLoss = 50.0; // Stop loss in points
+
+CTrade Trade; // Create an instance of the Trade class
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                    |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+   // Set the developer's site
+   Trade.SetDeveloperInfo('forexroboteasy.com');
+
+   return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                  |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+   // Add necessary code for deinitialization
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                              |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Add necessary code for tick processing
+}
+
+//+------------------------------------------------------------------+
+//| Expert pre-open analysis function                                 |
+//+------------------------------------------------------------------+
+void PreOpenAnalysis()
+{
+   // Add necessary code for pre-open analysis
+}
+
+//+------------------------------------------------------------------+
+//| Expert trading strategy function                                  |
+//+------------------------------------------------------------------+
+void TradingStrategy()
+{
+   // Add necessary code for trading strategy
+}
+
+//+------------------------------------------------------------------+
+//| Expert entry function                                             |
+//+------------------------------------------------------------------+
+int OnCalculate(const int rates_total,
+                const int prev_calculated,
+                const datetime &time[],
+                const double &open[],
+                const double &high[],
+                const double &low[],
+                const double &close[],
+                const long &tick_volume[],
+                const long &volume[],
+                const int &spread[])
+{
+   // Perform pre-open analysis
+   PreOpenAnalysis();
+
+   // Implement trading strategy
+   TradingStrategy();
+
+   return(rates_total);
+}
